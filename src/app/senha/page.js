@@ -25,7 +25,7 @@ export default function PasswordPage() {
     const cpf = localStorage.getItem('userCpf');
 
     try {
-      await axios.post('http://localhost:8000/users/senha', {
+      await axios.post('http://localhost:8000/api/users/senha', {
         cpf,
         passwordNumber,
       });
