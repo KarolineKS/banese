@@ -45,7 +45,7 @@ export default function Contract() {
             Estes termos e condições regem o seu uso da plataforma digital do Banco ABC. Leia com atenção antes de prosseguir.
           </p>
           <p className="mb-4">
-            Ao clicar em "Eu Aceito", você está concordando com estes termos e será redirecionado para a página de senha.
+            Ao clicar em Eu Aceito, você está concordando com estes termos e será redirecionado para a página de senha.
           </p>
         </div>
         <div className="flex justify-center">
