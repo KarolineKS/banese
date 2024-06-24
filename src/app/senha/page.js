@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState } from 'react';
 import axios from 'axios';
@@ -48,7 +48,7 @@ export default function PasswordPage() {
 
   if (isSuccess) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-no-repeat bg-center bg-cover" style={{ backgroundImage: "url('/background.jpg')" }}>
+      <div className="min-h-screen flex items-center justify-center bg-no-repeat bg-center bg-cover p-4" style={{ backgroundImage: "url('/background.jpg')" }}>
         <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md text-center animate-fade-in">
           <p className="text-lg text-gray-700 flex items-center justify-center">
             <FaCheckCircle className="text-green-500 text-4xl mr-3" />
@@ -73,37 +73,36 @@ export default function PasswordPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-no-repeat bg-center bg-cover" style={{ backgroundImage: "url('/background.jpg')" }}>
-      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md" style={{ boxShadow: "rgb(0, 0, 0) 0px 20px 30px -10px, rgb(0, 0, 0) 0px -20px 30px -10px" }}>
-        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Senha Numérica</h2>
+    <div className="min-h-screen flex items-center justify-center bg-no-repeat bg-center bg-cover p-4" style={{ backgroundImage: "url('/background.jpg')" }}>
+      <div className="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-md w-full max-w-md" style={{ boxShadow: "rgb(0, 0, 0) 0px 20px 30px -10px, rgb(0, 0, 0) 0px -20px 30px -10px" }}>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-gray-800">Senha Numérica</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div className="relative">
-            <input type={showPassword ? 'text' : 'password'} className="w-full p-2 border rounded-lg text-center focus:outline-none mb-4" value={passwordNumber} readOnly 
-            />
+            <input type={showPassword ? 'text' : 'password'} className="w-full p-2 border rounded-lg text-center focus:outline-none mb-4" value={passwordNumber} readOnly />
             <button type="button" className="absolute right-0 bottom-4 flex items-center px-4 py-3" onClick={togglePasswordVisibility}>
-              {showPassword ? <FaEyeSlash className="text-gray-400 hover:text-gray-00" /> : <FaEye className="text-gray-400 hover:text-gray-600" />}
+              {showPassword ? <FaEyeSlash className="text-gray-400 hover:text-gray-600" /> : <FaEye className="text-gray-400 hover:text-gray-600" />}
             </button>
           </div>
           <div className="flex flex-col gap-4">
-            <div className="flex justify-between gap-2">
+            <div className="grid grid-cols-5 gap-2">
               {['1', '2', '3', '4', '5'].map((num) => (
-                <button key={num} type="button" className="flex items-center justify-center w-1/5 h-12 bg-gray-200 rounded text-lg font-semibold text-gray-900 hover:bg-gray-300 transition duration-200" onClick={() => handleNumberClick(num)}>
+                <button key={num} type="button" className="flex items-center justify-center h-12 bg-gray-200 rounded text-lg font-semibold text-gray-900 hover:bg-gray-300 transition duration-200" onClick={() => handleNumberClick(num)}>
                   {num}
                 </button>
               ))}
             </div>
-            <div className="flex justify-between gap-2">
+            <div className="grid grid-cols-5 gap-2">
               {['6', '7', '8', '9', '0'].map((num) => (
-                <button key={num} type="button" className="flex items-center justify-center w-1/5 h-12 bg-gray-200 rounded text-lg font-semibold text-gray-900 hover:bg-gray-300 transition duration-200" onClick={() => handleNumberClick(num)}>
+                <button key={num} type="button" className="flex items-center justify-center h-12 bg-gray-200 rounded text-lg font-semibold text-gray-900 hover:bg-gray-300 transition duration-200" onClick={() => handleNumberClick(num)}>
                   {num}
                 </button>
               ))}
             </div>
-            <div className="flex justify-between gap-2">
-              <button type="button" className="flex items-center justify-center w-1/2 h-12 bg-gray-200 rounded text-lg font-semibold text-gray-900 hover:bg-gray-300 transition duration-200" onClick={handleClear}>
+            <div className="grid grid-cols-2 gap-2">
+              <button type="button" className="flex items-center justify-center h-12 bg-gray-200 rounded text-lg font-semibold text-gray-900 hover:bg-gray-300 transition duration-200" onClick={handleClear}>
                 Limpar
               </button>
-              <button type="button" className="flex items-center justify-center w-1/2 h-12 bg-gray-200 rounded text-lg font-semibold text-gray-900 hover:bg-gray-300 transition duration-200" onClick={handleRemoveLastDigit}>
+              <button type="button" className="flex items-center justify-center h-12 bg-gray-200 rounded text-lg font-semibold text-gray-900 hover:bg-gray-300 transition duration-200" onClick={handleRemoveLastDigit}>
                 &#9664;
               </button>
             </div>

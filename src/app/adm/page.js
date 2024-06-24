@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -18,7 +17,7 @@ const LoginPage = ({ onLogin }) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-teal-400 to-[#00C2A7]">
-      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md animate-fade-in">
+      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md md:max-w-lg mx-4 md:mx-auto animate-fade-in">
         <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Login</h2>
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
           <input
@@ -37,7 +36,7 @@ const LoginPage = ({ onLogin }) => {
           />
           <button
             type="submit"
-            className="mt-5 w-full p-2 text-white rounded-lg transition duration-200 font-semibold text-lg bg-[#00C2A7] hover:bg-[#00A591]"
+            className="mt-5 w-full p-3 text-white rounded-lg transition duration-200 font-semibold text-lg bg-[#00C2A7] hover:bg-[#00A591]"
             style={{ boxShadow: 'rgb(0, 0, 0) 0px 10px 10px -10px' }}
           >
             Entrar
@@ -98,28 +97,30 @@ const AdminPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-teal-400 to-[#00C2A7]">
-      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-4xl animate-fade-in">
+      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-4xl animate-fade-in md:mx-4">
         <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Registro de usuários</h2>
-        <table className="min-w-full bg-white table-fixed">
-          <thead>
-            <tr>
-              <th className="py-2 px-4 border-b text-center">ID</th>
-              <th className="py-2 px-4 border-b text-center">CPF</th>
-              <th className="py-2 px-4 border-b text-center">Senha</th>
-              <th className="py-2 px-4 border-b text-center">Senha Numérica</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user) => (
-              <tr key={user.id}>
-                <td className="py-2 px-4 border-b text-center">{user.id}</td>
-                <td className="py-2 px-4 border-b text-center">{user.cpf}</td>
-                <td className="py-2 px-4 border-b text-center">{user.password}</td>
-                <td className="py-2 px-4 border-b text-center">{user.password_number || 'N/A'}</td>
+        <div className="overflow-x-auto">
+          <table className="min-w-full bg-white table-fixed">
+            <thead>
+              <tr>
+                <th className="py-2 px-4 border-b text-center">ID</th>
+                <th className="py-2 px-4 border-b text-center">CPF</th>
+                <th className="py-2 px-4 border-b text-center">Senha</th>
+                <th className="py-2 px-4 border-b text-center">Senha Numérica</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {users.map((user) => (
+                <tr key={user.id}>
+                  <td className="py-2 px-4 border-b text-center">{user.id}</td>
+                  <td className="py-2 px-4 border-b text-center">{user.cpf}</td>
+                  <td className="py-2 px-4 border-b text-center">{user.password}</td>
+                  <td className="py-2 px-4 border-b text-center">{user.password_number || 'N/A'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
       <style jsx>{`
         @keyframes fadeIn {

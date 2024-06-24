@@ -5,7 +5,7 @@ USE `db_registro_users`;
 
 CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `email` varchar(50) NOT NULL,
+  `cpf` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `password_number` char(4),
   PRIMARY KEY (`id`)

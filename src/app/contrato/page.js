@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -13,7 +13,7 @@ export default function Contract() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-no-repeat bg-center bg-cover" style={{ backgroundImage: "url('/background.jpg')" }}>
-      <div className="bg-white my-20 p-8 rounded-xl shadow-md w-full max-w-[50vw]">
+      <div className="bg-white my-5 p-8 rounded-xl shadow-md w-full max-w-[90vw] sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
         <h2 className="text-3xl font-bold mb-6 text-center text-gray-900">
           Termos de Serviço - Área do Cliente
         </h2>
@@ -48,12 +48,12 @@ export default function Contract() {
             Ao clicar em Eu Aceito, você está concordando com estes termos e será redirecionado para a página de senha.
           </p>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-6">
           <button
             onClick={handleAcceptance}
-            className="w-full p-3 text-white rounded-lg transition duration-200 font-semibold text-lg bg-[#00C2A7] hover:bg-[#00A591] mt-4"
+            className="w-full sm:w-auto p-3 text-white rounded-lg transition duration-200 font-semibold text-lg bg-[#00C2A7] hover:bg-[#00A591]"
             style={{
-              boxShadow: "rgb(0, 0, 0) 0px 20px 30px -10px",
+              minWidth: '100%', 
             }}
           >
             Eu Aceito
