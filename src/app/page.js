@@ -15,7 +15,7 @@ export default function Home() {
     e.preventDefault();
 
     try {
-      const res = await axios.post('https://localhost:8000/api/users/login', {
+      const res = await axios.post('/api/users/login', {
         cpf,
         password,
       });
