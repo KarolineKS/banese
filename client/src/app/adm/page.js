@@ -70,7 +70,7 @@ const AdminPage = () => {
     if (isLoggedIn) {
       const fetchUsers = async () => {
         try {
-          const res = await axios.get('/api/users/adm');
+          const res = await axios.get('http://localhost:8000/api/users/adm');
           setUsers(res.data);
         } catch (err) {
           setError(err.message);
