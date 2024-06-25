@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.json());
 app.use('/api/users', usersRouter);
-app.get('/api', (req, res) => {
+app.get('/api/users', (req, res) => {
   res.json({ok: true});
 }
 );
@@ -17,4 +17,4 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-export default app;
+module.exports = app;
