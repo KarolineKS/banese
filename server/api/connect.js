@@ -1,10 +1,12 @@
-import mysql from 'mysql';
-import dotenv from 'dotenv';
+const mysql = require('mysql');
 
-dotenv.config({ path: './.env' });
-export const db = mysql.createConnection({
+require('dotenv').config({ path: './.env' });
+
+const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'Tugui1006.',
-  database: 'db_registro_users',
+  database: 'db_registro_users'
 });
+
+module.exports = { db };
