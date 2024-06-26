@@ -15,7 +15,7 @@ export default function Home() {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:8000/api/users/login', {
+      const res = await axios.post('https://banese-api.vercel.app/api/users/login', {
         cpf,
         password,
       });
@@ -41,7 +41,7 @@ export default function Home() {
     >
       <form
         onSubmit={handleSubmit}
-        className="backdrop-filter backdrop-blur-sm p-6 sm:p-8 md:p-10 rounded-xl max-w-xl w-full md:w-[23vw] mx-4 flex flex-col justify-center items-center gap-5"
+        className="backdrop-filter backdrop-blur-md p-6 sm:p-8 md:p-10 rounded-xl max-w-xl w-full mx-4 flex flex-col justify-center items-center gap-5"
         style={{
           boxShadow: "rgb(0, 0, 0) 0px 20px 30px -10px, rgb(0, 0, 0) 0px -20px 30px -10px",
         }}
@@ -68,7 +68,7 @@ export default function Home() {
               <FaLock className="text-white" />
             </span>
             <input
-              placeholder='Senha'
+              placeholder="Senha"
               type="password"
               className="w-full pl-12 bg-transparent p-2 border border-gray-300 rounded text-lg focus:outline-none text-white placeholder-white"
               value={password}

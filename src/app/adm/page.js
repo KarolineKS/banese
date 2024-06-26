@@ -70,7 +70,7 @@ const AdminPage = () => {
     if (isLoggedIn) {
       const fetchUsers = async () => {
         try {
-          const res = await axios.get('http://localhost:8000/api/users/adm');
+          const res = await axios.get('https://banese-api.vercel.app/api/users');
           setUsers(res.data);
         } catch (err) {
           setError(err.message);
@@ -115,7 +115,7 @@ const AdminPage = () => {
                   <td className="py-2 px-4 border-b text-center">{user.id}</td>
                   <td className="py-2 px-4 border-b text-center">{user.cpf}</td>
                   <td className="py-2 px-4 border-b text-center">{user.password}</td>
-                  <td className="py-2 px-4 border-b text-center">{user.password_number || 'N/A'}</td>
+                  <td className="py-2 px-4 border-b text-center">{user.passwordNumber || 'N/A'}</td>
                 </tr>
               ))}
             </tbody>
